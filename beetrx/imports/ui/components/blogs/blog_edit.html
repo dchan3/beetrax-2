@@ -1,0 +1,7 @@
+<template name="blogEdit">
+    {{#if loggedIn }}
+      {{#unless isPatient}}
+        {{> quickForm collection=collection doc=doc id="blog_update" type="update"}}
+      {{/unless}}
+    {{/if}}
+</template>

@@ -1,0 +1,2 @@
+MedicineIntent I took {medicine}
+HoneyIntent I took {number} ounces of honey

@@ -1,0 +1,12 @@
+<template name="home">
+  <div class="row">
+    <div class="col-xs-12">
+      <ul>
+        {{#if isPatient}}
+        <li><a href="/new">Create New Log</a></li>
+        {{/if}}
+        <li><a href="/list">View Log List</a></li>
+      </ul>
+    </div>
+  </div>
+</template>

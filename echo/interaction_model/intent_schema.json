@@ -1,0 +1,39 @@
+{
+  "intents": [
+    {
+	"intent": "MedicineIntent",
+	"slots": [
+	    {
+		"name": "medicine",
+		"type": "MEDICINES"
+	    }
+	]
+    },
+    {
+	"intent": "HoneyIntent",
+	"slots": [
+	    {
+		"name":"medicine",
+		"type":"OUNCES"
+	    }
+	]
+	
+    },
+    {
+	"intent": "FeelingIntent",
+	"slots": [
+	    {
+		"name":"medicine",
+		"type":"FEELINGS"
+	    }
+	]
+	
+    },      
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    }
+  ]
+}

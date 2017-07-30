@@ -1,0 +1,49 @@
+<template name="blogList">
+  <div class="row">
+    {{#if loggedIn }}
+      {{#if Template.subscriptionsReady}}
+        {{#if isPatient}}
+          <a href="/new">Create New Log</a>
+          <table border="1">
+            <tr>
+              <!-- <td><b>Date &amp; Time Logged</b></td> -->
+              <td><b>Emoji</b></td>
+              <!-- <td><b>View</b></td> -->
+            </tr>
+            {{#each blogs}}
+              <tr>
+                <!-- <td>{{createdAt}}</td> -->
+                <td style="font-size: 72px;">{{emoji}}</td>
+                <!-- <td><a href="/view/{{_id}}">View</a></td> -->
+              </tr>
+            {{/each}}
+          </table>
+          {{> highchartsHelper chartId="viz" chartObject=frequencyBar}}
+        {{else}}
+        <input type="text" /><label>Email Address</label>
+          {{#if blogs}}
+          <table border="1">
+            <tr>
+              <td><b>Date &amp; Time Logged</b></td>
+              <td><b>Emoji</b></td>
+              <td><b>View</b></td>
+              <td><b>Update</b></td>
+            </tr>
+            {{#each blogs}}
+              <tr>
+                <td>{{createdAt}}</td>
+                <td>{{emoji}}</td>
+                <td><a href="/view/{{_id}}">View</a></td>
+                <td><a href="/edit/{{_id}}">Update</a></td>
+              </tr>
+            {{/each}}
+          </table>
+        {{> highchartsHelper chartId="viz" chartObject=frequencyBar}}
+      {{/if}}
+    {{/if}}
+    {{/if}}
+    {{else}}
+      <p>Cut it, social engineer.</p>
+    {{/if}}
+  </div>
+</template>

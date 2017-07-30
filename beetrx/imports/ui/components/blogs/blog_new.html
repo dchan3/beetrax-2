@@ -1,0 +1,10 @@
+<template name="blogNew">
+  {{#if loggedIn }}
+    {{#if isPatient}}
+      <h1>Write New Blog</h1>
+       {{> quickForm id="new_blog" type="insert" schema=schema collection=collection}}
+    {{else}}
+      <p>It's not good to falsify data, bro.</p>
+    {{/if}}
+  {{/if}}
+</template>

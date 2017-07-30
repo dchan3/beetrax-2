@@ -1,0 +1,38 @@
+<template name="blogView">
+  {{#if loggedIn}}
+    {{#if isPatient}}
+      {{#if isPatientsOwn}}
+        {{#with doc}}
+          <div>{{createdAt}}</div>
+          <div>{{emoji}}</div>
+          <div>{{{body}}}</div>
+          <div>Medications:
+            <ul>
+              {{#each medications}}
+                <li>{{name}}: {{dosage}}</li>
+              {{/each}}
+            </ul>
+          </div>
+          <div>Honey: {{honeyAmount}}</div>
+        {{/with}}
+      {{else}}
+        <p>Creep.</p>
+      {{/if}}
+    {{else}}
+      {{#with doc}}
+        <h1>Log for {{email userId}}</h1>
+        <div>{{createdAt}}</div>
+        <div>{{emoji}}</div>
+        <div>{{{body}}}</div>
+        <div>Medications:
+          <ul>
+            {{#each medications}}
+              <li>{{name}}: {{dosage}}</li>
+            {{/each}}
+          </ul>
+        </div>
+        <div>Honey: {{honeyAmount}}</div>
+      {{/with}}
+    {{/if}}
+  {{/if}}
+</template>
